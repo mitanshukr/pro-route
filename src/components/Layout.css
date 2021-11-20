@@ -1,0 +1,41 @@
+.Layout {
+  text-align: center;
+}
+
+.Layout-header {
+  background-color: #202329;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  color: white;
+}
+
+.Layout-header h1 {
+  font-size: 26px;
+}
+
+.Layout-header nav ul {
+  display: flex;
+}
+
+.Layout-header nav ul li {
+  list-style: none;
+  padding: 0 20px;
+  font-size: 20px;
+}
+
+.Layout-header nav ul li a,
+.Layout-header nav ul li a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.Layout-header nav ul li a:hover {
+  color: #b3eeff;
+}
+
+.active {
+  color: #61dafb !important;
+}

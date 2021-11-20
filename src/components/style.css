@@ -1,0 +1,14 @@
+.page h2 {
+  font-size: 50px;
+}
+
+.page p {
+  font-size: 30px;
+}
+
+.page button {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
