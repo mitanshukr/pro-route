@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { Redirect, useHistory, useLocation } from "react-router";
+import { Redirect, useHistory, useLocation } from "react-router-dom";
 import { authContext } from "../context/context-store";
 
 const Login = () => {
@@ -7,12 +7,17 @@ const Login = () => {
   const location = useLocation();
   const authStatus = useContext(authContext);
   const [isBtnClicked, setBtnStatus] = useState(false);
+  // Here, we can trace the previous location from  the **location?.state?.from**
   let from = useRef(location?.state?.from || { pathname: "/" });
 
   useEffect(() => {
-    console.log(history.location);
-    console.log(location);
     if (location?.state?.isLogout) {
+      // If TRUE, then this means the Logout prevLocation
+      // was a Protected Page, resulting to land in <AuthRoute/>;
+      // which anyway redirects to Login Page if the user is not logged-In;
+      // but with extra **isLogout:true** Flag.
+      // We use this flag to track and navigate the user
+      // to Homepage in such scenario.
       history.replace("/");
     }
   });
@@ -24,7 +29,7 @@ const Login = () => {
     timer = setTimeout(() => {
       authStatus.login();
       history.replace(from.current);
-    }, 5000);
+    }, 3000);
   };
 
   useEffect(() => {

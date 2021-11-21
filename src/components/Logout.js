@@ -9,6 +9,7 @@ const Logout = () => {
 
   useEffect(() => {
     setTimeout(() => {
+      authStatus.logout();
       let prevLocation = null;
       if (location?.state?.from) {
         prevLocation = {
@@ -18,9 +19,9 @@ const Logout = () => {
       }
       history.replace(prevLocation || "/");
     }, 1000);
-    return () => {
-      authStatus.logout();
-    };
+    // return () => {
+    //   authStatus.logout();
+    // };
   }, [authStatus, history, location]);
 
   return (

@@ -12,3 +12,7 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.page img {
+  width: 1000px;
+}

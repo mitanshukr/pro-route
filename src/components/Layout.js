@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { NavLink, useLocation } from "react-router-dom";
 import { authContext } from "../context/context-store";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Layout.css";
 import "./style.css";
 
